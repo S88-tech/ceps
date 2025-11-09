@@ -19,7 +19,7 @@ const Notifications = () => {
   // ✅ Fetch all notifications
   const fetchNotifications = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/notifications", {
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/notifications", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -42,7 +42,7 @@ const Notifications = () => {
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/notifications", {
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/notifications", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
