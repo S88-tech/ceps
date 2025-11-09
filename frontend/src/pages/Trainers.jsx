@@ -13,7 +13,7 @@ const Trainers = () => {
   // Fetch all trainers
   const fetchTrainers = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/trainers");
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/trainers");
       const data = await res.json();
       if (data.success) setTrainers(data.trainers);
     } catch (error) {
@@ -37,7 +37,7 @@ const Trainers = () => {
     if (!token) return alert("Please login first");
 
     try {
-      const res = await fetch("http://localhost:5000/api/trainers", {
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/trainers", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
