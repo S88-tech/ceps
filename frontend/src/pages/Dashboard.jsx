@@ -27,7 +27,7 @@ const Dashboard = () => {
   const fetchDashboardData = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/dashboard", {
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/dashboard", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -48,7 +48,7 @@ const Dashboard = () => {
   const fetchTrainers = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/trainers", {
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/trainers", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
