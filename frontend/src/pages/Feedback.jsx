@@ -24,7 +24,7 @@ const Feedback = () => {
   const fetchAllFeedbacks = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:5000/api/feedback", {
+      const response = await fetch("https://ceps-msd-backend.onrender.com/api/feedback", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -46,7 +46,7 @@ const Feedback = () => {
 
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:5000/api/feedback", {
+      const response = await fetch("https://ceps-msd-backend.onrender.com/api/feedback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
