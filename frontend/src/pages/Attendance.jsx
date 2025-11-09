@@ -24,7 +24,7 @@ const Attendance = () => {
   // ✅ Fetch All Events
   const fetchEvents = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/events");
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/events");
       const data = await res.json();
       if (data.success) setEvents(data.events);
     } catch (err) {
@@ -42,7 +42,7 @@ const Attendance = () => {
     setLoading(true);
     try {
       const res = await fetch(
-        `http://localhost:5000/api/attendance/event/${selectedEvent}/students`,
+        `https://ceps-msd-backend.onrender.com/api/attendance/event/${selectedEvent}/students`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -99,7 +99,7 @@ const Attendance = () => {
     });
 
     try {
-      const res = await fetch("http://localhost:5000/api/attendance/save", {
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/attendance/save", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -127,7 +127,7 @@ const Attendance = () => {
 
   const fetchMyAttendance = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/attendance/student", {
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/attendance/student", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
