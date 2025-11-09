@@ -7,7 +7,7 @@ const Profile = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    fetch("http://localhost:5000/api/auth/me", {
+    fetch("https://ceps-msd-backend.onrender.com/api/auth/me", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -24,7 +24,7 @@ const Profile = () => {
     setIsSaving(true);
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/user/update", {
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/user/update", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
