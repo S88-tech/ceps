@@ -25,7 +25,7 @@ const Analytics = () => {
   // ✅ Fetch feedback from backend and compute averages
   const fetchFeedbackAnalytics = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/feedback", {
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/feedback", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
