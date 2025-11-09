@@ -29,7 +29,7 @@ const Header = ({ title }) => {
   // ✅ Fetch notifications
   const fetchNotifications = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/notifications", {
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/notifications", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
