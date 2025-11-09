@@ -13,7 +13,7 @@ const EventRegistration = () => {
 
   const fetchEvents = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/events");
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/events");
       const data = await res.json();
       if (data.success) setEvents(data.events);
     } catch (error) {
@@ -37,7 +37,7 @@ const EventRegistration = () => {
         return;
       }
 
-      const res = await fetch("http://localhost:5000/api/events/update-status", {
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/events/update-status", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
