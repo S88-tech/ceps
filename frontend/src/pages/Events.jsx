@@ -24,7 +24,7 @@ const Events = () => {
   // ✅ Fetch all events
   const fetchEvents = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/events");
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/events");
       const data = await res.json();
       if (data.success) setEvents(data.events);
       else setEvents([]);
@@ -63,7 +63,7 @@ const Events = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("⚠️ Are you sure you want to delete this event?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/events/${id}`, {
+      const res = await fetch(`https://ceps-msd-backend.onrender.com/api/events/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -101,7 +101,7 @@ const Events = () => {
     e.preventDefault();
     try {
       const res = await fetch(
-        `http://localhost:5000/api/events/${editingEvent._id}`,
+        `https://ceps-msd-backend.onrender.com/api/events/${editingEvent._id}`,
         {
           method: "PUT",
           headers: {
@@ -127,7 +127,7 @@ const Events = () => {
 const handleRegister = async (eventId) => {
   try {
     const res = await fetch(
-      `http://localhost:5000/api/events/${eventId}/register`,
+      `https://ceps-msd-backend.onrender.com/api/events/${eventId}/register`,
       {
         method: "POST",
         headers: {
