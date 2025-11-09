@@ -35,7 +35,7 @@ const TrainerAllocation = () => {
   const fetchTrainers = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/trainers", {
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/trainers", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -52,7 +52,7 @@ const TrainerAllocation = () => {
   // ✅ Fetch All Events for Dropdown
   const fetchEvents = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/events");
+      const res = await fetch("https://ceps-msd-backend.onrender.com/api/events");
       const data = await res.json();
       if (data.success) setEvents(data.events || []);
     } catch (err) {
@@ -74,8 +74,8 @@ const TrainerAllocation = () => {
     }
 
     const url = editTrainer
-      ? `http://localhost:5000/api/trainers/${editTrainer}`
-      : "http://localhost:5000/api/trainers";
+      ? `https://ceps-msd-backend.onrender.com/api/trainers/${editTrainer}`
+      : "https://ceps-msd-backend.onrender.com/api/trainers";
     const method = editTrainer ? "PUT" : "POST";
 
     try {
@@ -120,7 +120,7 @@ const TrainerAllocation = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this trainer?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/trainers/${id}`, {
+      const res = await fetch(`https://ceps-msd-backend.onrender.com/api/trainers/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
